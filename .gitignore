@@ -2,6 +2,7 @@
 /.git/
 /OptimizedHTML-5-master.zip
 /app/backup
+/dist/backup
 /**/Thumbs.db
 /**/*.DS_Store
 /**/package-lock.json
