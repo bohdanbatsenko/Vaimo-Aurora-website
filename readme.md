@@ -1,4 +1,4 @@
 Aurora test HTML CSS website
 
 Live website
-https://bohdanbatsenko.github.io/Vaimo-Aurora-website/
+https://bohdanbatsenko.github.io/Vaimo-Aurora-website/dist/
