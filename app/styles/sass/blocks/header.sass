@@ -1,0 +1,304 @@
+.site-header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 1	
+	.header-top-bar
+		padding: 0 25px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		text-align: center
+		height: 24px 
+		background: #fff 
+		position: relative
+		@media screen and (max-width: 768px)
+			display: none
+		.top-bar-left,
+		.top-bar-right
+			flex: 1 1 10%
+		.top-bar-center
+			margin: 0 auto
+			font-size: 11px
+			font-weight: 500
+			margin-top: 5px
+			margin-bottom: 3px
+			line-height: 16px
+			letter-spacing: 0.8px
+		.top-bar-right
+			display: flex
+			justify-content: flex-end
+			padding-top: 4px
+			margin-bottom: 5px
+			line-height: 15px
+			text-align: right
+			.stores-text
+				font-weight: normal
+				font-size: 10px
+			.pinner-icon
+				width: 8px
+				height: 11,12px
+				margin-right: 6px
+				line-height: 15px
+	&.header-active
+		.header-top-bar
+			background: #F7F7F7
+		.header-main
+			transition: background-color .5s ease
+			background-color: #fff
+			.logo-wrapper
+				.logo
+					color: #000
+			.search-mobile
+				.search-icon-mob,
+				.search-icon-close
+					svg path
+						fill: #000
+			.search-container
+				.custom-search
+					background: #F7F7F7
+					.search-input
+						&::placeholder
+							color: #000
+					.search-icon
+						svg path
+							fill: #000
+			.sign-in-container
+				.sign-in-buttons
+					color: #000
+				.basket-wrapper
+					.basket-link
+						svg path
+							fill: #000
+			.header-main-nav
+				.burger
+					&::before,
+					&::after,
+					span
+						background: #000
+				.header__nav
+					.nav__list
+						.nav__item
+							a
+								@media screen and(min-width: 768px)
+									color: #000
+
+	.header-main
+		width: 100%
+		position: relative
+		transition: all .5s ease-in-out
+		&::after
+			content: ""
+			position: absolute
+			display: block
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			opacity: .24
+			background: linear-gradient(180deg, rgba(51, 51, 51, 0.9) 14.31%, rgba(27, 27, 27, 0.469176) 58.6%, rgba(0, 0, 0, 0.0001) 100%)
+			z-index: -1
+
+		&-container
+			padding: 24px 24px 0 24px
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			align-items: center
+			flex-wrap: wrap
+			position: relative
+			@media screen and(max-width: 768px)
+				padding: 24px 16px 0 16px
+			.logo-wrapper
+				//flex: 5%
+				// flex-grow: 0
+				// flex-shrink: 0				
+				//flex-basis: 15%
+				text-align: left
+				flex: 0 0 15%
+				@media screen and(max-width: 992px)
+					flex: 0 0 25%
+				@media screen and(max-width: 768px)
+					flex: 1 0 10%
+					order: 3
+					text-align: center
+				.logo
+					display: inline-block
+					color: #fff
+					font-size: 38px
+					font-weight: 700
+					line-height: 57px
+			.search-mobile
+				flex: 0 0 5%
+				order: 2
+				display: flex
+				align-items: flex-start
+				margin-left: 7px
+				cursor: pointer
+				@media screen and(min-width: 768px)
+					display: none					
+				&.mob-search-active
+					.search-icon-mob
+						display: none
+					.search-icon-close
+						display: block
+				.search-icon-close
+					display: none
+				.search-icon-mob,
+				.search-icon-close
+					width: 18px
+					padding: 0 10px
+					height: 18px
+					line-height: 18px
+				.search-icon-close
+					svg path
+						fill: #fff			
+				.search-icon-mob
+					svg path
+						fill: #fff			
+			.search-container
+				//flex: 50%
+				// flex-grow: 0
+				// flex-shrink: 0
+				//flex-basis: 70%
+				flex: 0 0 70%
+				margin: 0 auto
+				width: 584px
+				max-width: 584px
+				height: 48px
+				padding: 5px
+				display: flex
+				align-items: center
+				justify-content: center
+				position: relative
+				transition: all .5s ease-in-out
+				@media screen and(max-width: 992px)
+					flex: 0 0 40%
+				@media screen and(max-width: 768px)
+					display: none
+					flex: 0 0 100%
+					width: 100%
+					max-width: 100%
+					height: auto
+					transform: translateY(-200px)			
+					order: 5
+					transition: all .5s ease-in-out
+					&.search-container-active
+						display: flex
+						transform: translateY(0)
+						transition: all .5s ease-in-out
+						.custom-search
+							display: inline-flex
+							height: 40px
+							margin-top: 16px
+							margin-bottom: 15px
+
+				.custom-search
+					position: relative
+					width: 100%
+					height: 100%
+					padding: 2px
+					border-radius: 3px 
+					z-index: 2
+					background: rgba(#F7F7F7,.24)
+					.search-icon
+						position: absolute
+						width: 16px
+						height: 16px
+						right: 31px
+						top: 8px
+						cursor: pointer
+					.search-input
+						width: 90%
+						position: absolute
+						bottom: 4px
+						left: 3px
+						text-align: left
+						padding-left: 10px
+						border-radius: 3px
+						border: none
+						outline: none
+						background: transparent
+						font-style: normal
+						font-size: 11px
+						line-height: 24px
+						font-weight: 500
+						color: #fff
+						&::placeholder
+							color: #fff
+			.sign-in-container
+				flex: 0 0 15%
+				display: flex
+				align-items: center
+				justify-content: flex-end
+				@media screen and (max-width: 992px)
+					flex: 0 0 25%
+				@media screen and (max-width: 768px)
+					order: 4
+				&.mobile
+					@media screen and (max-width: 768px)
+					.sign-in-buttons
+						display: flex
+						color: #000
+						margin-left: 15px
+				.sign-in-buttons
+					font-size: 11px
+					font-weight: 600
+					line-height: 16.5px
+					color: #fff
+					margin-right: 17px
+					position: relative
+					display: flex
+					@media screen and (max-width: 768px)
+						display: none
+					.signin-btn
+						cursor: pointer
+						display: inline-block
+					.divider
+						margin: 0 15px
+
+				.basket-wrapper
+					display: flex
+					justify-content: center
+					width: 16px
+					height: 24px
+					line-height: 20px
+					@media screen and (max-width: 768px)
+						margin-right: 8px
+					.basket-link
+						margin-left: 16px
+						@media screen and (max-width: 768px)
+							margin-left: 0
+						//margin: 0
+					.basket-circle-wrapper
+						display: none
+						margin-left: 8px
+
+
+						.basket-circle
+							display: flex
+							justify-content: center
+							align-items: center
+							line-height: 22px
+							width: 22px
+							height: 22px
+							color: #000
+							background: #F2DA91
+							border-radius: 50%
+							font-size: 11px
+							font-weight: 600
+
+				
+
+
+					
+	
+
+
+
+
+
+
+
+

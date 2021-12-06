@@ -1,0 +1,8 @@
+/**/node_modules/
+/.git/
+/OptimizedHTML-5-master.zip
+/app/backup
+/**/Thumbs.db
+/**/*.DS_Store
+/**/package-lock.json
+/**/debug.log

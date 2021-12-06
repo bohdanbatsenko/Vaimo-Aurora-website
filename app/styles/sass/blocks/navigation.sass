@@ -1,0 +1,312 @@
+.header-main-nav
+	flex: 0 0 100%
+	padding: 15px 0
+	display: flex
+	justify-content: center
+	@media screen and (max-width: 768px)
+		flex: 0 0 5%
+	.overlay
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0,.5)
+		z-index: 99
+		opacity: 0
+		visibility: hidden
+		&.open
+			opacity: 1
+			visibility: visible
+			transition: all .3s
+	.lock
+		overflow: hidden
+	.nav
+		@media screen and(max-width: 768px)
+			position: fixed
+			left: 0
+			top: 0
+			max-width: 300px
+			width: 80%
+			height: 100vh
+			z-index: 100
+			box-shadow: 5px 0 15px -5px rgba(0,0,0,.8)
+			background-color: #fff
+			transform: translateX(-150vw)
+			overflow-x: hidden
+			overflow-y: auto
+		&.open
+			transform: translateX(0)
+			transition: all .3s	
+	.header__nav
+		@media screen and (min-width: 768px)
+			display: flex
+			flex-direction: column
+		.nav__mobile-title
+			width: 100%
+			text-align: center
+			.mobile-title
+				display: inline-block
+				margin-top: 24px
+				margin-bottom: 24px
+				font-size: 28px
+				line-height: 28px
+				font-weight: 700
+			@media screen and (min-width: 768px)
+				display: none
+		.nav__list
+			list-style-type: none
+			margin: 0
+			display: flex
+			align-items: center
+			&.transformation
+				@media screen and (max-width: 768px)
+					transform: translateX(-100%)
+					transition: all .3s
+			@media screen and (max-width: 768px)
+				flex-direction: column
+				align-items: flex-start
+				padding: 0
+				padding-top: 0
+				position: relative
+			.nav__item
+				position: relative
+				padding: 15px 0
+				&:not(:first-child)
+					margin-left: 20px
+				&:hover
+					.nav__list--dropdown
+						visibility: visible
+						opacity: 1
+						transition: all .3s ease
+				.nav__link
+					font-weight: 600
+					text-transform: uppercase
+					font-size: 13px
+					line-height: 19.5px
+					@media screen and(min-width: 768px)
+						color: #fff
+					@media screen and(max-width: 768px)
+						padding: 20px 30px
+						width: 100%
+						display: flex
+						justify-content: space-between
+						align-items: center
+						border-bottom: 1px solid #bfbfbf
+					&::after
+						transform: rotate(-90deg)
+				.nav__link--drop
+					&::after
+						content: ""
+						width: 10px
+						height: 10px
+						background-image: url(/images/dist/dropdown.svg)
+						background-size: cover
+						background-position: center
+						background-repeat: no-repeat
+						display: inline-block
+						margin-left: 5px
+						transition: transform .3s ease
+						@media screen and(min-width: 768px)
+							display: none
+						@media screen and(max-width: 768px)
+							width: 12px
+					&:hover
+						@media screen and(min-width: 768px)
+							&::after
+								transform: rotate(180deg) 
+								transition: all .3s ease
+	
+				@media screen and(max-width: 768px)
+					margin-left: 0!important
+					width: 100%
+					padding: 0
+					position: static
+
+				.nav__list--dropdown
+					display: none
+					position: absolute
+					background-color: #fff
+					right: 0
+					top: 100%
+					padding: 30px 0
+					display: block
+					box-shadow: 0 5px 15px 0 rgba(0,0,0,.5)
+					transition: all .15s ease
+					opacity: 0
+					visibility: hidden
+					&.transformation
+						opacity: 1
+						visibility: visible
+						display: block
+						transform: none
+						background: #fff
+						padding: 30px 0
+					@media screen and(max-width: 768px)
+						position: absolute
+						top: 0
+						right: auto
+						left: 100%
+						box-shadow: none
+						width: 100%
+						display: none
+				.dropdown-submenu
+					display: flex
+					align-items: initial
+				.dropdown-list__item
+					flex-grow: 1
+					min-width: 200px
+					padding: 0 30px
+					margin-bottom: 10px
+					@media screen and(max-width: 768px)
+						padding: 0
+					&.mobile-back
+						border-bottom: 2px solid #000
+					.dropdown-list__link
+						font-size: 13px
+						text-transform: uppercase
+						font-weight: 600
+						display: flex
+						.current-page
+							margin-right: auto
+							@media screen and(min-width: 768px)
+								display: none
+						@media screen and(max-width: 768px)
+							padding: 20px 30px
+							width: 100%
+							display: flex
+							justify-content: space-between
+							align-items: center
+							border-bottom: 1px solid #bfbfbf									
+						.nav__list
+							@extend .nav__list
+						.nav__list--dropdown
+							@extend .nav__list--dropdown
+						.dropdown-list
+							@extend .dropdown-list
+						
+
+				.mobile-back
+					display: none
+					@media screen and(max-width: 768px)
+						display: block
+						a
+							position: relative
+							border: none
+							display: flex
+							align-items: center
+							justify-content: flex-start
+							&::before
+								content: ""
+								width: 10px
+								height: 10px
+								background-image: url(/images/dist/dropdown.svg)
+								background-size: cover
+								background-position: center
+								background-repeat: no-repeat
+								display: inline-block
+								margin-right: 10px
+								transform: rotate(90deg)
+								transition: transform .3s ease																		
+
+					.dropdown-submenu__item
+						@media screen and(max-width: 768px)
+							width: 100%
+							padding: 0
+							border: none!important
+						&:first-child
+							padding-left: 0
+						&:last-child
+							padding-right: 0
+						&:not(:last-child)
+							border-right: 1px solid #bfbfbf
+							
+						.dropdown-submenu__title
+							@media screen and(max-width: 768px)
+								padding: 0 30px
+							.dropdown-submenu__banner
+								@media screen and(max-width: 768px)
+									display: inline-block
+									padding: 20px
+						.dropdown-submenu__list
+							padding: 0
+							.dropdown-submenu__list-item
+								margin-bottom: 10px
+								a
+									@media screen and(max-width: 768px)
+										padding: 20px 30px
+										width: 100%
+										display: flex
+										justify-content: space-between
+										align-items: center
+										border-bottom: 1px solid #bfbfbf	
+
+	.nav-mobile-bottom-wrapper
+		@media screen and(min-width: 768px)
+			display: none
+		@media screen and(max-width: 768px)
+			margin-top: 79px
+			margin-bottom: auto
+			text-align: left
+			//height: 48px
+			display: flex
+
+			flex-direction: column
+			.sign-in-container
+				order: 1
+				background: #f7f7f7
+				padding: 17px 15px
+				justify-content: flex-start
+			.our-stores-wrapper
+				order: 2
+				margin-top: 1px
+				width: 100%
+				height: 48px
+				padding: 15px 35px
+				background: #f7f7f7
+				.stores-text
+					font-size: 10px
+					font-weight: 400px
+					width: 100%
+					padding: 0
+					margin: 0
+			.we-deliver-mobile
+				order: 3
+				align-self: center
+				margin-bottom: auto
+				font-size: 10px
+				font-weight: 400
+				text-align: center
+				margin-top: 15px
+
+	.burger
+		width: 20px
+		height: 15px
+		cursor: pointer
+		background: transparent
+		border: none
+		position: relative
+		display: none
+		@media screen and(max-width: 768px)
+			display: block
+		&::before,
+		&::after
+			content: ""
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 3px
+			background-color: #fff
+		&::after
+			top: auto
+			bottom: 0
+		span
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 100%
+			height: 3px		
+			display: inline-block
+			background: #fff			

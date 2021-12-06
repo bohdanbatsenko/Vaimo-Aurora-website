@@ -1,0 +1,101 @@
+// USER VARIABLES SECTION
+
+$accent: orange // Accent Color
+$brandyellow: #F2DA91
+$fontsize: 16px // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: poppins, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/mmenu-js/dist/core/offcanvas/mmenu.offcanvas' // Bootstrap Reboot collection
+//@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+
+
+@include font('poppins', normal, 700, '../fonts/poppins/Poppins-Bold.woff2')
+@include font('poppins', normal, 600, '../fonts/poppins/Poppins-SemiBold.woff2')
+@include font('poppins', normal, 500, '../fonts/poppins/Poppins-Medium.woff2')
+@include font('poppins', normal, 400, '../fonts/poppins/Poppins-Regular.woff2')
+@include font('cormorant', normal, 700, '../fonts/CormorantGaramond/CormorantGaramond-Bold.woff2')
+
+
+// GENERAL CSS SETTINGS
+*
+	&:before,
+	&:after
+		box-sizing: border-box
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	scroll-behavior: smooth
+	&.lock
+		overflow: hidden
+
+.wrapper
+	min-width: 100%
+	max-width: 100%
+	overflow: hidden
+	position: relative
+	&.lock
+		overflow: hidden!important
+img
+	max-width: 100%
+	object-fit: cover
+a
+	color: inherit
+	text-decoration: none
+	&:hover
+		color: inherit
+.img-responsive
+	display: block
+	width: 100%
+	max-width: 100%
+	height: auto
+.container
+	//max-width: 1440px
+	max-width: 100%
+	padding: 0 25px
+	margin: 0 auto
+	@media screen and (max-width:768px)
+		padding: 0 16px
+.hide,
+.hidden
+	display: none
